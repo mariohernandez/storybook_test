@@ -1,0 +1,10 @@
+{%
+  set classes = [
+  'chip',
+  'chip--color-' ~ color|clean_class,
+  dismissable ? 'chip--dismissable',
+]
+%}
+<div class="{{ classes|join(" ") }}">
+  {% block chip_content %}{{ content }}{% endblock %}
+</div>
