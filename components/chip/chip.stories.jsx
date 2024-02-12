@@ -1,5 +1,6 @@
 export default {
   title: 'Components/chip',
+  tags: ['autodocs'],
 };
 
 // Twig file.
@@ -12,9 +13,10 @@ import './chip.css';
 // import './chip.js';
 
 export const chip = () => (
+  //👇 Enables auto-generated documentation for the component story
   myChip({
     color: 'primary',
     dismissable: true,
-    content: 'Article',
+    content: 'Chaz',
   })
 );
