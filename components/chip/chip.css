@@ -1,3 +1,7 @@
+body {
+  background-color: #ededed;
+}
+
 .chip {
   display: inline-block;
   padding: 0.25rem;

@@ -16,7 +16,7 @@ export const chip = () => (
   //👇 Enables auto-generated documentation for the component story
   myChip({
     color: 'primary',
-    dismissable: true,
-    content: 'Chaz',
+    dismissable: 'chip--dismissable',
+    content: 'UCLA Health',
   })
 );
