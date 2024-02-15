@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     twig({
       namespaces: {
-        components: join(__dirname, "../components"),
+        components: join(__dirname, "../src/components"),
       },
     }),
   ],
