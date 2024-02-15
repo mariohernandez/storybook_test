@@ -1,8 +1,12 @@
 import { defineConfig } from "vite"
 import twig from 'vite-plugin-twig-drupal';
-import autoprefixer from 'autoprefixer';
 import { join } from "node:path"
 export default defineConfig({
+  root: 'src',
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+  },
   plugins: [
     twig({
       namespaces: {
