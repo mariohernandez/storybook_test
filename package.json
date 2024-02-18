@@ -5,8 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run storybook",
-    "build": "npm run storybook build",
-    "storybook": "storybook dev -p 6006"
+    "build": "storybook build",
+    "storybook": "storybook dev -p 6006",
+    "vite": "vite build"
   },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.0",
@@ -30,6 +31,10 @@
   },
   "dependencies": {
     "add-attributes-twig-extension": "^0.1.0",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-cli": "^11.0.0",
+    "postcss-nested": "^6.0.1",
+    "rollup-plugin-copy": "^3.5.0",
     "twig-drupal-filters": "^3.2.0"
   }
 }
