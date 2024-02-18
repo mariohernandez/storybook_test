@@ -10,6 +10,7 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@storybook/addon-essentials": "^8.0.0-beta.2",
     "@storybook/addon-interactions": "^8.0.0-beta.2",
     "@storybook/addon-links": "^8.0.0-beta.2",
@@ -31,9 +32,5 @@
     "vite-plugin-twig-drupal": "^1.2.1"
   },
   "dependencies": {
-    "@modyfi/vite-plugin-yaml": "^1.1.0",
-    "js-yaml": "^4.1.0",
-    "js-yaml-loader": "^1.2.2",
-    "yaml": "^2.3.4"
   }
 }
