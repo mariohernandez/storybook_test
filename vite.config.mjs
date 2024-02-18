@@ -1,6 +1,8 @@
 import { defineConfig } from "vite"
 import twig from 'vite-plugin-twig-drupal';
+import yml from '@modyfi/vite-plugin-yaml';
 import { join } from "node:path"
+
 export default defineConfig({
   root: 'src',
   build: {
@@ -13,5 +15,6 @@ export default defineConfig({
         components: join(__dirname, "../src/components"),
       },
     }),
+    yml(),
   ],
 })

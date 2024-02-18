@@ -29,5 +29,11 @@
     "twig": "^1.17.1",
     "vite": "^5.1.0",
     "vite-plugin-twig-drupal": "^1.2.1"
+  },
+  "dependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.1.0",
+    "js-yaml": "^4.1.0",
+    "js-yaml-loader": "^1.2.2",
+    "yaml": "^2.3.4"
   }
 }
