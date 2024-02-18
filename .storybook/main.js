@@ -1,4 +1,3 @@
-/** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
   stories: [
     "../src/components/**/*.mdx",
@@ -16,5 +15,7 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  staticDirs: ['../dist'],
 };
+
 export default config;

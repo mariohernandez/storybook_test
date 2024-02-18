@@ -1,14 +1,31 @@
-/** @type { import('@storybook/html').Preview } */
-const preview = {
-  parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+import Twig from 'twig';
+import { useEffect } from '@storybook/preview-api';
+import twigDrupal from 'twig-drupal-filters';
+import twigAddAttributes from 'add-attributes-twig-extension';
+import './_drupal.js';
+
+function setupTwig(twig) {
+  twig.cache();
+  twigDrupal(twig);
+  twigAddAttributes(twig);
+  return twig;
+}
+
+setupTwig(Twig);
+
+export const decorators = [
+  storyFn => {
+    useEffect(() => Drupal.attachBehaviors(), []);
+    return storyFn();
+  },
+];
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/i,
     },
   },
 };
-
-export default preview;
