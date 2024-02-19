@@ -1,0 +1,26 @@
+# mybutton.component.yml
+name: Title component
+# Schema for the props, defined using key:value pairs https://json-schema.org/
+props:
+  type: object # Props are always an object with keys.
+  properties: # variables printed in the component template.
+    level:
+      type: string
+      title: Heading level
+      examples:
+        - 2
+    modifier:
+      type: string
+      title: Modifier
+      examples:
+        - card__title
+    text:
+      type: string
+      title: Text
+      examples:
+        - Welcome to our website
+    url:
+      type: string
+      title: URL
+      examples:
+        - https://mariohernandez.io

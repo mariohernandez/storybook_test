@@ -1,6 +1,7 @@
-import { defineConfig } from "vite"
+import { defineConfig } from "vite";
 import twig from 'vite-plugin-twig-drupal';
-import { join } from "node:path"
+import { join } from "node:path";
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 export default defineConfig({
   root: 'src',
   build: {
@@ -10,8 +11,20 @@ export default defineConfig({
   plugins: [
     twig({
       namespaces: {
-        components: join(__dirname, "../src/components"),
+        components: join(__dirname, "../components"),
       },
+    }),
+    ViteImageOptimizer({
+      png: {quality: 80},
+      jpeg: {quality: 80},
+      jpg: {quality: 80},
+      tiff: {quality: 80},
+      gif: {},
+      webp: {lossless: true},
+      avif: {lossless: true},
+      includePublic: true,
+      logStats: true,
+      include: undefined,
     }),
   ],
 })

@@ -1,0 +1,21 @@
+# mybutton.component.yml
+name: Button component
+# Schema for the props, defined using key:value pairs https://json-schema.org/
+props:
+  type: object # Props are always an object with keys.
+  properties: # variables printed in the component template.
+    url:
+      type: string
+      title: Link
+      examples:
+        - https://example.org
+    text:
+      type: string
+      title: Text
+      examples:
+        - Click me!
+    modifier:
+      type: string
+      title: Class
+      examples:
+        - blue, red # as defined in btn.css

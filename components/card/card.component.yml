@@ -1,0 +1,93 @@
+# Everything in this file is optional. Still, the file needs to exist. Adding
+# metadata here will improve the DX when using components.
+
+# Note: currently in Drupal 10.1, the schema will fail to validate if
+# props section is not present. This may change in a future  release.
+
+# This is so your IDE knows about the syntax for fixes and autocomplete.
+$schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
+
+# The human readable name.
+name: Card component
+
+# Status can be: "experimental", "stable", "deprecated", "obsolete".
+status: experimental
+
+# Use this key to organize components together.
+group: Content
+
+# Schema for the props. We support JSON Schema. Learn more about the
+# syntax at https://json-schema.org
+# The props section is currently required. See Components without
+# Properties section below.
+props:
+  # Props are always an object with keys. Each key is a variable in your
+  # component template.
+  type: object
+
+  # If your component has required properties, you list them here.
+  required:
+    - title
+    - image
+
+  properties:
+    modifier:
+      title: Modifier CSS Class
+      type: string
+      examples:
+        - 'card--horizontal'
+    # The key is the name of the variable in the template.
+    title:
+      level:
+        type: string
+        title: Heading level
+        examples:
+          - 2
+      modifier:
+        type: string
+        title: Modifier
+        examples:
+          - card__title
+      text:
+        type: string
+        title: Text
+        examples:
+          - Welcome to our website
+      url:
+        type: string
+        title: URL
+        examples:
+          - https://mariohernandez.io
+    image:
+      type: string
+      title: Image
+      description: Article image
+      examples:
+          |-
+        <img src="https://plus.unsplash.com/premium_photo-1683977922495-3ab3ce7ba4e6?q=80&w=3400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Alt text" />
+    link:
+      type: string
+      title: Tertiary
+
+      # Limit the available options by using enums.
+      enum:
+        - success
+        - warning
+        - danger
+
+      # Provide a default value
+      default: success
+
+
+# Slots always hold arbitrary markup. We know that beforehand, so no need for
+# a schema for slots.
+slots:
+  # The key is the name of the slot. In your template you will use
+  # {% block body %}.
+  teaser:
+    title: Teaser text
+    description: Short teaser of text for the article
+
+  # Only the key is required when declaring slots. This is how you declare a
+  # slot with minimal typing.
+  minimal: {}

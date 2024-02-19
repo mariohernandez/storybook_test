@@ -91,6 +91,13 @@
       Type: <span>{{ node.bundle() }}</span>
     {% endblock %}
   {% endembed %}
+<br>
+  {{ include('storybook:link', {
+    url: 'https://mariohernandez.io',
+    text: 'Read more',
+    modifier:'purple'
+    })
+  }}
 
   <header class="{{ layout }}">
     {{ title_prefix }}
