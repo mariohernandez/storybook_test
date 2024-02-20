@@ -1,5 +1,13 @@
 module.exports = {
-  plugins: {
-    autoprefixer: {},
-  }
+  plugins: [
+    require('autoprefixer')(),
+    require('postcss-import'),
+    require('postcss-preset-env')({
+      stage: 1,
+      features: {
+        'custom-media-queries': {preserve: true },
+      },
+      browsers: 'last 2 versions',
+    })
+  ]
 }

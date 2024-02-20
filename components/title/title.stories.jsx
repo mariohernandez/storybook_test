@@ -18,7 +18,7 @@ export const PlainTitle = () => (
 
 export const LinkedTitle = () => (
   myTitle({
-    level: 2,
+    level: 1,
     modifier: 'page__title',
     text: 'Welcome to my website',
     url: 'https://mariohernandez',

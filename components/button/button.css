@@ -6,12 +6,12 @@
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  padding: 12px 20px;
+  padding: 12px 24px;
   text-decoration: none;
 }
 .button--primary {
   color: white;
-  background-color: #1ea7fd;
+  background-color: rebeccapurple;
 }
 .button--secondary {
   color: #333;
