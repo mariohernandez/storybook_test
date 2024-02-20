@@ -8,13 +8,13 @@
 $schema: https://git.drupalcode.org/project/sdc/-/raw/1.x/src/metadata.schema.json
 
 # The human readable name.
-name: Card component
+name: Image component
 
 # Status can be: "experimental", "stable", "deprecated", "obsolete".
 status: experimental
 
 # Use this key to organize components together.
-group: Content
+group: Media
 
 # Schema for the props. We support JSON Schema. Learn more about the
 # syntax at https://json-schema.org
@@ -25,45 +25,25 @@ props:
   # component template.
   type: object
 
-  # If your component has required properties, you list them here.
-  required:
-    - title
-    - image
-
   properties:
-    modifier:
-      title: Modifier CSS Class
-      type: string
-      examples:
-        - 'card--horizontal'
     # The key is the name of the variable in the template.
-    title:
-      level:
-        type: string
-        title: Heading level
-        examples:
-          - 2
-      modifier:
-        type: string
-        title: Modifier
-        examples:
-          - card__title
-      text:
-        type: string
-        title: Text
-        examples:
-          - Welcome to our website
-      url:
-        type: string
-        title: URL
-        examples:
-          - https://mariohernandez.io
-    image:
+    src:
       type: string
-      title: Image
-      description: Article image
-
-    teaser:
-      type: string
-      title: Teaser text
-      description: Short teaser of text for the article
+      title: Image source
+      examples:
+        - https://fabricweb.azureedge.net/fabric-website/placeholders/300x300.png
+      alt:
+        type: string
+        title: Image alt text
+        examples:
+          - Image placeholder
+      width:
+        type: string
+        title: Image width
+        examples:
+          - 300
+      height:
+        type: string
+        title: Image height
+        examples:
+          - 300

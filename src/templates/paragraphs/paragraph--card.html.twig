@@ -1,0 +1,17 @@
+{% set render_content = content|render %}
+
+{{ dump()}}
+{% set article_title = {
+    'level': 2,
+    'modifier': 'card__title',
+    'text': content.field_title,
+    'url': url
+  }
+%}
+
+{% include "storybook:card" with {
+    'image': content.field_image,
+    'title': article_title,
+    'teaser': content.field_teaser
+  } only
+%}
