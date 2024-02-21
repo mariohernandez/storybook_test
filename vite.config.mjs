@@ -5,6 +5,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 export default defineConfig({
   root: 'src',
+  publicDir: 'public',
   build: {
     emptyOutDir: true,
     brotliSize: false,
@@ -18,14 +19,13 @@ export default defineConfig({
         "image": "./components/image/image.css",
         "link": "./components/link/link.css",
         "page": "./components/page/page.css",
-        "chip_js": "./components/chip/chip.js",
       },
       output: {
         assetFileNames: "[name].css",
       },
     },
     sourcemap: true,
-    manifest: false
+    manifest: false,
   },
   plugins: [
     twig({
@@ -34,10 +34,10 @@ export default defineConfig({
       },
     }),
     ViteImageOptimizer({
-      png: {quality: 80},
-      jpeg: {quality: 80},
-      jpg: {quality: 80},
-      tiff: {quality: 80},
+      png: {quality: 60},
+      jpeg: {quality: 60},
+      jpg: {quality: 60},
+      tiff: {quality: 60},
       gif: {},
       webp: {lossless: true},
       avif: {lossless: true},

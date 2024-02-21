@@ -1,8 +1,19 @@
+@import '../../src/css/breakpoints.css';
+
 img {
   display: block;
+  height: auto;
   max-width: 100%;
 }
 
 .card {
   max-width: 460px;
+
+  p {
+    color: red;
+
+    @media (--tablet) {
+      color: rebeccapurple;
+    }
+  }
 }
