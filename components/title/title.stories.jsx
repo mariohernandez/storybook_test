@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Title',
+  title: 'Components/Atoms/Title',
   tags: ['autodocs'],
 };
 

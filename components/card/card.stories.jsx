@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/Card',
+  title: 'Components/Molecules/Card',
   tags: ['autodocs'],
 };
 
