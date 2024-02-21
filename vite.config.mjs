@@ -12,6 +12,7 @@ export default defineConfig({
     outDir: "../dist/assets",
     rollupOptions: {
       input: {
+        "global": "./src/css/global.css",
         "card": "./components/card/card.css",
         "chip": "./components/chip/chip.css",
         "button": "./components/button/button.css",

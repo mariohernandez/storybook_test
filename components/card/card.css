@@ -1,4 +1,4 @@
-@import '../../src/css/breakpoints.css';
+@custom-media --tablet (min-width: 768px);
 
 img {
   display: block;
@@ -10,7 +10,7 @@ img {
   max-width: 460px;
 
   p {
-    color: red;
+    color: blue;
 
     @media (--tablet) {
       color: rebeccapurple;
