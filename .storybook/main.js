@@ -9,7 +9,7 @@ const config = {
     "@storybook/addon-interactions",
   ],
   framework: {
-    name: "@storybook/html-vite",
+    name: "@storybook/react-vite",
     options: {},
   },
   docs: {
