@@ -1,3 +1,5 @@
+import parse from 'html-react-parser';
+
 import twigTemplate from './chip.twig';
 import data from './chip.yml';
 import './chip.css';
@@ -10,5 +12,6 @@ export default {
 
 export const Chip = {
   name: 'Chip',
-  render: (args) => twigTemplate({ ...data, ...args }),
+  render: () => parse(twigTemplate(data)),
+  args: { ...data },
 };

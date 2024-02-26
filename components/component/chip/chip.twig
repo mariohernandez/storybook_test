@@ -5,8 +5,6 @@
 ]|join(' ')|trim %}
 
 <div {{ add_attributes({ class: classes }) }}>
-  {# {% include '@components/button/button.twig' %} #}
-
   {% block chip_content %}
     {{ content }}
   {% endblock %}
