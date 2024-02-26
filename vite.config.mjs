@@ -1,31 +1,40 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 import twig from 'vite-plugin-twig-drupal';
 import yml from '@modyfi/vite-plugin-yaml';
-import { join } from "node:path"
-import copy from "rollup-plugin-copy";
+import { join } from 'node:path';
+import checker from 'vite-plugin-checker';
 
 export default defineConfig({
-  root: 'src',
-  build: {
-    outDir: '../dist',
-    emptyOutDir: true,
-  },
   plugins: [
+    checker({
+      eslint: {
+        lintCommand: 'eslint "./components/**/*.{js,jsx}"',
+      },
+      stylelint: {
+        lintCommand: 'stylelint "./components/**/*.css"',
+      },
+    }),
     twig({
       namespaces: {
-        components: join(__dirname, "../src/components"),
+        components: join(__dirname, '../components'),
       },
     }),
     yml(),
-    copy({
-      targets: [{ src: 'src/**/**.css', dest: 'dist/css' }],
-      hook: 'writeBundle',
-    }),
   ],
+  build: {
+    rollupOptions: {
+      input: {
+        global: './components/base/global.css',
+        utilties: './components/base/utilities.css',
+      },
+      output: {
+        assetFileNames: '[name].css',
+      },
+    },
+    sourcemap: true,
+    manifest: false,
+  },
   css: {
-    src: 'src/**/**',
-    postcss: {
-      config: './postcss.config.js'
-    }
-  }
-})
+    devSourcemap: true,
+  },
+});

@@ -2,7 +2,9 @@ import Twig from 'twig';
 import { useEffect } from '@storybook/preview-api';
 import twigDrupal from 'twig-drupal-filters';
 import twigAddAttributes from 'add-attributes-twig-extension';
-import './_drupal.js';
+import './drupal.js';
+import '../dist/global.css';
+import '../dist/utilties.css';
 
 function setupTwig(twig) {
   twig.cache();
