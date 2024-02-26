@@ -16,7 +16,7 @@ export default defineConfig({
     }),
     twig({
       namespaces: {
-        components: join(__dirname, '../components'),
+        components: join(__dirname, './components/component'),
       },
     }),
     yml(),
