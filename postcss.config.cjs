@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     require('@csstools/postcss-global-data')({
-      files: ['./components/base/props/media.css'],
+      files: ['./source/base/props/media.css'],
     }),
     require('postcss-advanced-variables')(),
     require('postcss-nested')(),

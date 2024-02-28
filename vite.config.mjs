@@ -8,15 +8,21 @@ export default defineConfig({
   plugins: [
     checker({
       eslint: {
-        lintCommand: 'eslint "./components/**/*.{js,jsx}"',
+        lintCommand: 'eslint "./source/**/*.{js,jsx}"',
       },
       stylelint: {
-        lintCommand: 'stylelint "./components/**/*.css"',
+        lintCommand: 'stylelint "./source/**/*.css"',
       },
     }),
     twig({
       namespaces: {
-        components: join(__dirname, './components/component'),
+        base: join(__dirname, './source/base'),
+        collections: join(__dirname, './source/collections'),
+        components: join(__dirname, './source/components'),
+        elements: join(__dirname, './source/elements'),
+        layouts: join(__dirname, './source/layouts'),
+        pages: join(__dirname, './source/pages'),
+        theme: join(__dirname, './source/theme'),
       },
     }),
     yml(),
@@ -24,8 +30,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        global: './components/base/global.css',
-        utilties: './components/base/utilities.css',
+        global: './source/base/global.css',
+        utilties: './source/base/utilities.css',
       },
       output: {
         assetFileNames: '[name].css',

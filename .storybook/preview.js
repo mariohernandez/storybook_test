@@ -29,6 +29,16 @@ export const preview = {
     options: {
       storySort: {
         method: 'alphabetical',
+        order: [
+          'Base',
+          'Layouts',
+          'Elements',
+          'Components',
+          'Collections',
+          'Pages',
+          'Theme',
+        ],
+        includeName: true,
       },
     },
   },
